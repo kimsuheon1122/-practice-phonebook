@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from "./App.module.css"
+import React from 'react'
+import { Container,Row,Col } from "react-bootstrap"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ContactForm } from "./components/ContactForm";
+import { ContactList } from "./components/ContactList";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>Phone Book</h1>
+      <Container>
+        <Row>
+          <Col>
+            <ContactForm/>
+          </Col>
+          <Col>
+            <ContactList/>
+          </Col>
+        </Row>
+      </Container>
     </div>
-  );
+  )
 }
-
-export default App;
